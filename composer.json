@@ -1,0 +1,30 @@
+{
+    "name": "flug/iteratorbag",
+    "type": "library",
+    "description": "a lib for array parameters",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flug",
+            "email": "flugv1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clooder\\Component\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Clooder\\Component\\Tests\\": "Tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "friendsofphp/php-cs-fixer": "^1.13",
+        "pedrotroller/php-cs-custom-fixer": "^1.6"
+    }
+}

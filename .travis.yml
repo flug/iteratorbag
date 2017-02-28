@@ -1,0 +1,31 @@
+language: php
+php:
+  - '7.0'
+  - '7.1'
+  - hhvm
+  - nightly
+
+matrix:
+    include:
+        - php: 5.6
+          env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
+        - php: 7.0
+          env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
+        - php: 7.1
+          env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
+        - php: hhvm
+          env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
+    allow_failures:
+        - php: hhvm
+
+branches:
+    only:
+        - master
+
+before_script:
+    - composer install
+
+script:
+    - vendor/bin/phpunit -vvv
+    - vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
